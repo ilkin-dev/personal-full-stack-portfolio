@@ -1,0 +1,5 @@
+.product-page {
+  @include flex-center;
+  height: 100vh;
+  background-color: lighten($background-color, 10%);
+}
