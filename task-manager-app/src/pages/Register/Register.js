@@ -3,14 +3,14 @@ import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext';
 
 const Register = () => {
-
     const [username, setUsername] = useState('');
-    const { login } = useContext(AuthContext);
+    const [password, setPassword] = useState('');
+    const { register } = useContext(AuthContext);
     const navigate = useNavigate();
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        login(username);
+        await register(username, password);
         navigate('/');
     };
 
@@ -21,16 +21,25 @@ const Register = () => {
                 <div>
                     <label>Username:</label>
                     <input
-                        type='text'
+                        type="text"
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
                         required
                     />
                 </div>
-                <button type='submit'>Register</button>
+                <div>
+                    <label>Password:</label>
+                    <input
+                        type="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        required
+                    />
+                </div>
+                <button type="submit">Register</button>
             </form>
         </div>
     );
-}
+};
 
 export default Register

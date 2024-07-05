@@ -5,7 +5,7 @@ import { TaskContext } from '../../context/TaskContext';
 const ViewTask = () => {
     const { id } = useParams();
     const { tasks } = useContext(TaskContext);
-    const task = tasks.find((t) => t.id === parseInt(id));
+    const task = tasks.find((t) => t._id === id);
 
     return (
         <div>
@@ -14,6 +14,6 @@ const ViewTask = () => {
             <p>Status: {task.completed ? 'Completed' : 'Incomplete'}</p>
         </div>
     );
-}
+};
 
 export default ViewTask

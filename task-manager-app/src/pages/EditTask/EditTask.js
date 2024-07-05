@@ -6,14 +6,14 @@ const EditTask = () => {
     const { id } = useParams();
     const navigate = useNavigate();
     const { tasks, updateTask } = useContext(TaskContext);
-    const task = tasks.find((t) => t.id === parseInt(id));
+    const task = tasks.find((t) => t._id === id);
 
     const [title, setTitle] = useState(task.title);
     const [description, setDescription] = useState(task.description);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        updateTask(task.id, { id: task.id, title, description, completed: task.completed });
+        updateTask(task._id, { title, description, completed: task.completed });
         navigate('/');
     };
 
@@ -42,6 +42,6 @@ const EditTask = () => {
             </form>
         </div>
     );
-}
+};
 
 export default EditTask

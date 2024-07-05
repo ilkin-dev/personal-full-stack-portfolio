@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { TaskContext } from '../../context/TaskContext';
 
 const CreateTask = () => {
-
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const { addTask } = useContext(TaskContext);
@@ -40,6 +39,6 @@ const CreateTask = () => {
             </form>
         </div>
     );
-}
+};
 
 export default CreateTask

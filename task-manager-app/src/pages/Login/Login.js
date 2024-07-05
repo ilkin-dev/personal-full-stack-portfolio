@@ -3,16 +3,16 @@ import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext';
 
 const Login = () => {
-
     const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
     const { login } = useContext(AuthContext);
     const navigate = useNavigate();
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        login(username);
+        await login(username, password);
         navigate('/');
-    }
+    };
 
     return (
         <div>
@@ -21,16 +21,25 @@ const Login = () => {
                 <div>
                     <label>Username:</label>
                     <input
-                        type='text'
+                        type="text"
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
                         required
                     />
                 </div>
-                <button type='submit'>Login</button>
+                <div>
+                    <label>Password:</label>
+                    <input
+                        type="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        required
+                    />
+                </div>
+                <button type="submit">Login</button>
             </form>
         </div>
     );
-}
+};
 
 export default Login
