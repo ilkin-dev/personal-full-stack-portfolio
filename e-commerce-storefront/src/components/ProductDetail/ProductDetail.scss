@@ -1,3 +1,5 @@
+@import "../../assets/styles/variables";
+
 .product-detail {
   padding: 20px;
   border: 1px solid #ddd;
@@ -13,7 +15,7 @@
 
   button {
     padding: 10px 20px;
-    background-color: #333;
+    background-color: $primary-color;
     color: white;
     border: none;
     border-radius: 4px;
@@ -21,7 +23,7 @@
     font-weight: bold;
 
     &:hover {
-      background-color: #555;
+      background-color: $secondary-color;
     }
   }
 }
