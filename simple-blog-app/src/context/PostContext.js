@@ -3,9 +3,9 @@ import React, { createContext, useState } from 'react';
 export const PostContext = createContext();
 
 const initialPosts = [
-    { id: 1, title: 'First Post', content: 'This is first post.' },
-    { id: 2, title: 'Second Post', content: 'This is second post.' },
-    { id: 3, title: 'Third Post', content: 'This is third post.' },
+    { id: 1, title: 'First Post', content: 'This is the first post.' },
+    { id: 2, title: 'Second Post', content: 'This is the second post.' },
+    { id: 3, title: 'Third Post', content: 'This is the third post.' },
 ];
 
 export const PostProvider = ({ children }) => {
@@ -29,14 +29,8 @@ export const PostProvider = ({ children }) => {
     };
 
     return (
-        <PostContext.Provider value={
-            {
-                posts,
-                addPost,
-                updatePost,
-                deletePost
-            }}>
+        <PostContext.Provider value={{ posts, addPost, updatePost, deletePost }}>
             {children}
         </PostContext.Provider>
-    )
-}
+    );
+};

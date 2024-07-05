@@ -1,20 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useState, useContext } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import { PostContext } from '../../context/PostContext';
 
 const EditPost = () => {
-    const { id } = useParams(); // Get the post ID from the URL
-    const { posts, updatePost } = useContext(PostContext); // Use context to get posts and updatePost function
-    const post = posts.find((p) => p.id === parseInt(id)); // Find the post by ID
+    const { id } = useParams();
+    const navigate = useNavigate();
+    const { posts, updatePost } = useContext(PostContext);
+    const post = posts.find((p) => p.id === parseInt(id));
 
-    // State for managing form inputs
     const [title, setTitle] = useState(post.title);
     const [content, setContent] = useState(post.content);
 
-    // Function to handle form submission
     const handleSubmit = (e) => {
         e.preventDefault();
-        updatePost(post.id, { id: post.id, title, content }); // Update post using context function
+        updatePost(post.id, { id: post.id, title, content });
+        navigate('/');  // Redirect to home page after updating
     };
 
     return (
@@ -41,7 +41,7 @@ const EditPost = () => {
                 <button type="submit">Update Post</button>
             </form>
         </div>
-    )
-}
+    );
+};
 
-export default EditPost
+export default EditPost;
