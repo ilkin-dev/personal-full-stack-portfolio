@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { PostContext } from '../../context/PostContext';
+import { Link } from 'react-router-dom';
 
 const CreatePost = () => {
 
@@ -37,8 +38,9 @@ const CreatePost = () => {
                 </div>
                 <button type="submit">Create Post</button>
             </form>
+            <Link to="/">Back to Home</Link>
         </div>
-    )
+    );
 }
 
 export default CreatePost

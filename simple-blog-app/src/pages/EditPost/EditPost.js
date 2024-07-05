@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import { PostContext } from '../../context/PostContext';
 
 const EditPost = () => {
@@ -40,6 +40,7 @@ const EditPost = () => {
                 </div>
                 <button type="submit">Update Post</button>
             </form>
+            <Link to="/">Back to Home</Link>
         </div>
     );
 };

@@ -1,6 +1,6 @@
 import './App.css';
 
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
 // Pages
 import Home from './pages/Home/Home';
@@ -12,13 +12,20 @@ function App() {
   return (
     // Router component wraps the entire application to enable routing
     <Router>
-      {/* Routes component contains all Route components */}
-      <Routes>
-        <Route path='/' element={<Home />}></Route>
-        <Route path='/create' element={<CreatePost />}></Route>
-        <Route path='/edit/:id' element={<EditPost />}></Route>
-        <Route path='/view/:id' element={<ViewPost />}></Route>
-      </Routes>
+      <div>
+        <nav className="navbar">
+          <Link to="/">Home</Link>
+          <Link to="/create">Create Post</Link>
+        </nav>
+        <div className="container">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/create" element={<CreatePost />} />
+            <Route path="/edit/:id" element={<EditPost />} />
+            <Route path="/view/:id" element={<ViewPost />} />
+          </Routes>
+        </div>
+      </div>
     </Router>
   );
 }
