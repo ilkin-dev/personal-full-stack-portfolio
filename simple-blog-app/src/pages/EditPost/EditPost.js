@@ -1,14 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-
-const posts = [
-    { id: 1, title: 'First Post', content: 'This is the first post.' },
-    { id: 2, title: 'Second Post', content: 'This is the second post.' },
-    { id: 3, title: 'Third Post', content: 'This is the third post.' },
-];
+import { PostContext } from '../../context/PostContext';
 
 const EditPost = () => {
     const { id } = useParams(); // Get the post ID from the URL
+    const { posts, updatePost } = useContext(PostContext); // Use context to get posts and updatePost function
     const post = posts.find((p) => p.id === parseInt(id)); // Find the post by ID
 
     // State for managing form inputs
@@ -18,8 +14,7 @@ const EditPost = () => {
     // Function to handle form submission
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Logic to handle post editing will go here
-        console.log('Updated Post:', { id, title, content });
+        updatePost(post.id, { id: post.id, title, content }); // Update post using context function
     };
 
     return (

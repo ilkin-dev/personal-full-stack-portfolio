@@ -1,18 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { PostContext } from '../../context/PostContext';
 
 const CreatePost = () => {
 
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
+    const { addPost } = useContext(PostContext); // Use context to get addPost function
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
-        console.log("New Post:", { title, content });
-
+        addPost(title, content); // Add new post using context function
         setTitle('');
         setContent('');
-    }
+    };
 
     return (
         <div>
@@ -21,7 +21,7 @@ const CreatePost = () => {
                 <div>
                     <label>Title:</label>
                     <input
-                        type='text'
+                        type="text"
                         value={title}
                         onChange={(e) => setTitle(e.target.value)}
                         required
@@ -35,7 +35,7 @@ const CreatePost = () => {
                         required
                     ></textarea>
                 </div>
-                <button type='submit'>Create Post</button>
+                <button type="submit">Create Post</button>
             </form>
         </div>
     )

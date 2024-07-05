@@ -1,16 +1,12 @@
-import React from 'react'
-
-// Dummy data for posts (to be replaced with state later)
-const posts = [
-    { id: 1, title: 'First Post', content: 'This is the first post.' },
-    { id: 2, title: 'Second Post', content: 'This is the second post.' },
-    { id: 3, title: 'Third Post', content: 'This is the third post.' },
-];
+import React, { useContext } from 'react';
+import { PostContext } from '../../context/PostContext';
 
 const PostList = () => {
+    // Use context to get posts
+    const { posts } = useContext(PostContext);
     return (
         <div>
-            <h2>Blog Post</h2>
+            <h2>Blog Posts</h2>
             <ul>
                 {posts.map((post) => (
                     <li key={post.id}>
