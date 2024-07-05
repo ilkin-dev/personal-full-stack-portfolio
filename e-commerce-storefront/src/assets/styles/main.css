@@ -20,19 +20,31 @@ body {
   border-radius: 8px;
 }
 
-.navbar {
+.header {
   background-color: #333;
   padding: 15px;
+}
+.header .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.navbar a {
+.header .navbar a {
   color: white;
   margin-right: 10px;
   text-decoration: none;
   font-weight: bold;
 }
-.navbar a:hover {
+.header .navbar a:hover {
   text-decoration: underline;
+}
+
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
 }

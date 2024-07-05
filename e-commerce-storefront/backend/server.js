@@ -37,6 +37,12 @@ app.post('/products', async (req, res) => {
     res.json(newProduct);
 });
 
+app.post('/products', async (req, res) => {
+    const newProduct = new Product(req.body);
+    await newProduct.save();
+    res.json(newProduct);
+});
+
 app.put('/products/:id', async (req, res) => {
     const updatedProduct = await Product.findByIdAndUpdate(req.params.id, req.body, { new: true });
     res.json(updatedProduct);

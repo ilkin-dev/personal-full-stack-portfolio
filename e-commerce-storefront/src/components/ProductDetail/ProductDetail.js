@@ -10,6 +10,10 @@ const ProductDetail = () => {
     const { addToCart } = useContext(CartContext);
     const product = products.find((p) => p._id === id);
 
+    if (!product) {
+        return <div>Loading...</div>;
+    }
+
     return (
         <div className="product-detail">
             <h1>{product.name}</h1>

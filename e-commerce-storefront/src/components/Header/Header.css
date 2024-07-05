@@ -1,0 +1,18 @@
+.header {
+  background-color: #333;
+  padding: 15px;
+}
+.header .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .navbar a {
+  color: white;
+  margin-right: 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.header .navbar a:hover {
+  text-decoration: underline;
+}

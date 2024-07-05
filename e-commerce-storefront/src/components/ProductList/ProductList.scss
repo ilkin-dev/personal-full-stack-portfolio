@@ -1,3 +1,5 @@
+@import "../../assets/styles/variables";
+
 .product-list {
   ul {
     list-style-type: none;
@@ -5,7 +7,11 @@
   }
 
   li {
-    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
     margin: 10px 0;
     border: 1px solid #ddd;
     border-radius: 4px;
@@ -15,16 +21,22 @@
       background-color: #f9f9f9;
     }
 
+    h3 {
+      margin: 0 0 10px 0;
+      font-size: 1.2em;
+    }
+
+    p {
+      margin: 0 0 5px 0;
+      color: #666;
+    }
+
     a {
       text-decoration: none;
-      color: inherit;
-
-      h3 {
-        margin: 0 0 10px 0;
-      }
-
-      p {
-        margin: 0 0 5px 0;
+      color: $primary-color;
+      font-weight: bold;
+      &:hover {
+        text-decoration: underline;
       }
     }
   }

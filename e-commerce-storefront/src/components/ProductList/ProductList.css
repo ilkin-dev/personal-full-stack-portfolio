@@ -3,7 +3,11 @@
   padding: 0;
 }
 .product-list li {
-  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
   margin: 10px 0;
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -12,13 +16,19 @@
 .product-list li:hover {
   background-color: #f9f9f9;
 }
+.product-list li h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.2em;
+}
+.product-list li p {
+  margin: 0 0 5px 0;
+  color: #666;
+}
 .product-list li a {
   text-decoration: none;
-  color: inherit;
+  color: #333;
+  font-weight: bold;
 }
-.product-list li a h3 {
-  margin: 0 0 10px 0;
-}
-.product-list li a p {
-  margin: 0 0 5px 0;
+.product-list li a:hover {
+  text-decoration: underline;
 }

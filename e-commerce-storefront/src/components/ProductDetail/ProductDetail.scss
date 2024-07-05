@@ -1,16 +1,19 @@
 @import "../../assets/styles/variables";
 
 .product-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
 
   h1 {
-    margin: 0 0 20px 0;
+    margin-bottom: 20px;
+    color: $primary-color;
   }
 
   p {
-    margin: 0 0 10px 0;
+    margin: 10px 0;
+    color: #666;
   }
 
   button {
@@ -21,6 +24,7 @@
     border-radius: 4px;
     cursor: pointer;
     font-weight: bold;
+    margin-top: 20px;
 
     &:hover {
       background-color: $secondary-color;
