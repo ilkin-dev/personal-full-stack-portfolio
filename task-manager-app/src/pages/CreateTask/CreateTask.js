@@ -18,7 +18,7 @@ const CreateTask = () => {
         <div>
             <h1>Create Task</h1>
             <form onSubmit={handleSubmit}>
-                <div>
+                <div className="form-group">
                     <label>Title:</label>
                     <input
                         type="text"
@@ -27,7 +27,7 @@ const CreateTask = () => {
                         required
                     />
                 </div>
-                <div>
+                <div className="form-group">
                     <label>Description:</label>
                     <textarea
                         value={description}
@@ -35,7 +35,9 @@ const CreateTask = () => {
                         required
                     ></textarea>
                 </div>
-                <button type="submit">Create Task</button>
+                <div className="form-group">
+                    <button type="submit">Create Task</button>
+                </div>
             </form>
         </div>
     );

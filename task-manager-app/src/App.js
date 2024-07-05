@@ -16,7 +16,7 @@ function App() {
 
   return (
     <Router>
-      <nav>
+      <nav className="navbar">
         <Link to="/">Home</Link>
         {user ? (
           <>
@@ -30,14 +30,16 @@ function App() {
           </>
         )}
       </nav>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/create" element={<PrivateRoute><CreateTask /></PrivateRoute>} />
-        <Route path="/edit/:id" element={<PrivateRoute><EditTask /></PrivateRoute>} />
-        <Route path="/view/:id" element={<PrivateRoute><ViewTask /></PrivateRoute>} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-      </Routes>
+      <div className="container">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/create" element={<PrivateRoute><CreateTask /></PrivateRoute>} />
+          <Route path="/edit/:id" element={<PrivateRoute><EditTask /></PrivateRoute>} />
+          <Route path="/view/:id" element={<PrivateRoute><ViewTask /></PrivateRoute>} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+        </Routes>
+      </div>
     </Router>
   );
 }

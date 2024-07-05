@@ -10,14 +10,22 @@ const TaskList = () => {
             <h2>Task List</h2>
             <ul>
                 {tasks.map(task => (
-                    <li key={task.id}>
+                    <li key={task._id} className="task-item">
                         <h3>{task.title}</h3>
                         <p>{task.description}</p>
-                        <button onClick={() => toggleTaskCompletion(task._id)}>
+                        <button
+                            className="complete-btn"
+                            onClick={() => toggleTaskCompletion(task._id)}
+                        >
                             {task.completed ? 'Mark as Incomplete' : 'Mark as Complete'}
                         </button>
-                        <Link to={`/edit/${task._id}`}>Edit</Link>
-                        <button onClick={() => deleteTask(task._id)}>Delete</button>
+                        <Link to={`/edit/${task._id}`} className="edit-btn">Edit</Link>
+                        <button
+                            className="delete-btn"
+                            onClick={() => deleteTask(task._id)}
+                        >
+                            Delete
+                        </button>
                     </li>
                 ))}
             </ul>
